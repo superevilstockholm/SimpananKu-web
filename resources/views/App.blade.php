@@ -17,19 +17,23 @@
     {{-- End Google Font --}}
     {{-- Local CSS --}}
     <link rel="stylesheet" href="{{ asset('static/css/global-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('static/css/animation.css') }}">
     {{-- End Local CSS --}}
 </head>
 <body data-bs-theme="dark" style="background-color: black;">
     @if ($meta['showNavbar'])
         <header class="p-0 m-0 sticky-top">
+            {{-- Navbar Component --}}
             @include('components.navbar_component')
         </header>
     @endif
     <main>
+        {{-- Content --}}
         @yield('content')
     </main>
     @if ($meta['showFooter'])
         <footer>
+            {{-- Footer Component --}}
             @include('components.footer_component')
         </footer>
     @endif
@@ -38,10 +42,15 @@
     {{-- End Bootstrap --}}
     {{-- Sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    {{-- End Sweetalert --}}
+    {{-- Axios --}}
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         axios.defaults.headers.common['ngrok-skip-browser-warning'] = 'any';
     </script>
+    {{-- End Axios --}}
+    {{-- Local JS --}}
+    <script src="{{ asset('static/js/global-script.js') }}"></script>
+    {{-- End Local JS --}}
 </body>
 </html>

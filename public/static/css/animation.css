@@ -1,0 +1,61 @@
+@keyframes slideUp {
+    0% {
+        transform: translateY(15%);
+        overflow: hidden;
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        overflow: hidden;
+        opacity: 1;
+    }
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(-15%);
+        overflow: hidden;
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        overflow: hidden;
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes bar-1-animation {
+    from {
+        width: 0%;
+    } to {
+        width: 75%;
+    }
+}
+@keyframes bar-2-animation {
+    from {
+        width: 0%;
+    } to {
+        width: 50%;
+    }
+}
+@keyframes bar-3-animation {
+    from {
+        width: 0%;
+    } to {
+        width: 25%;
+    }
+}

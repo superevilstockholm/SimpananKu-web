@@ -54,19 +54,19 @@
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
                     <div class="d-flex flex-column">
                         <h5 class="p-0 m-0">Jumlah Pengguna</h5>
-                        <p class="text-primary">150 Pengguna</p>
+                        <p class="text-primary fs-4">150 Pengguna</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
                     <div class="d-flex flex-column">
                         <h5 class="p-0 m-0">Jumlah Guru</h5>
-                        <p class="text-primary">36 Guru</p>
+                        <p class="text-primary fs-4">36 Guru</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
                     <div class="d-flex flex-column">
                         <h5 class="p-0 m-0">Total Transaksi</h5>
-                        <p class="text-primary">100.000 Transaksi</p>
+                        <p class="text-primary fs-4">100.000 Transaksi</p>
                     </div>
                 </div>
             </div>

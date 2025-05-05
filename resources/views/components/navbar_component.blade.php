@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg my-0" style="backdrop-filter: blur(10px);">
+<nav class="navbar navbar-expand-lg my-0 py-1" style="backdrop-filter: blur(10px);">
     <div class="container py-0 my-0">
         <div class="navbar-brand py-0 my-0 w-lg-25 d-lg-flex justify-content-start">
             <a class="navbar-brand d-flex align-items-center fw-semibold gap-1 py-0 my-0" href="/">
@@ -24,12 +24,15 @@
                     <a class="nav-link {{ request()->is('about') ? 'active fw-semibold' : 'fw-medium' }}" {{ request()->is('about') ? 'aria-current="page"' : '' }} href="/about">About</a>
                 </li>
             </ul>
+            {{-- Android --}}
             <div class="d-block d-lg-none w-100">
 
             </div>
         </div>
-        <div class="d-none d-lg-flex w-25 justify-content-end">
-
+        {{-- Desktop --}}
+        <div class="d-none d-lg-flex w-25 justify-content-end align-items-center gap-2">
+            <a href="/login" class="btn btn-sm rounded-pill px-lg-3 px-2 py-1 border boder-1 border-primary d-flex align-items-center gap-2 glassmorphism-btn-info-sm">Masuk <i class="bi bi-arrow-right"></i></a>
+            <a href="/login" class="btn btn-sm rounded-pill px-lg-3 px-2 py-1 border boder-1 border-primary d-flex align-items-center gap-2 glassmorphism-btn-info-sm">Masuk <i class="bi bi-arrow-right"></i></a>
         </div>
     </div>
 </nav>
