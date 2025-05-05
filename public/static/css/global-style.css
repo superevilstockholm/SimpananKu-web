@@ -2,6 +2,23 @@
     font-family: 'Inter', sans-serif;
 }
 
+.fs-7 {
+    font-size: 0.9rem;
+}
+
+.pengguna-kami::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(var(--bs-primary-rgb), 1);
+    border-radius: 10px;
+}
+
 @media (min-width: 768px) {
     .w-md-25 {
         width: 25% !important;
@@ -18,6 +35,9 @@
 @media (min-width: 992px) {
     .w-lg-25 {
         width: 25% !important;
+    }
+    .w-lg-40 {
+        width: 40% !important;
     }
     .w-lg-50 {
         width: 50% !important;

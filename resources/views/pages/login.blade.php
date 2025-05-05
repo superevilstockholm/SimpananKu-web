@@ -11,7 +11,7 @@
     </div>
     <div class="container py-0 my-0 w-100 h-100 z-3">
         <div class="w-100 h-100 p-0 m-0 d-flex align-items-center justify-content-center">
-            <div class="d-flex flex-column px-2 py-4 py-lg-5 rounded-2 w-100 w-md-75 w-lg-40 gap-3" style="background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(20px); box-shadow: inset 0 0 50px rgba(var(--bs-primary-rgb), 0.3); animation: fade-in 1.3s ease;">
+            <div class="d-flex flex-column px-2 py-4 py-lg-5 rounded-2 w-100 w-md-50 w-lg-40 gap-3" style="background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(20px); box-shadow: inset 0 0 50px rgba(var(--bs-primary-rgb), 0.3); animation: fade-in 1.3s ease;">
                 <div class="d-flex flex-column p-0 m-0 text-center">
                     <h1 class="fw-bold display-6 p-0 m-0">Masuk</h1>
                     <p class="fw-normal p-0 m-0 fs-7 fs-md-6">Silahkan masuk menggunakan akun Anda</p>

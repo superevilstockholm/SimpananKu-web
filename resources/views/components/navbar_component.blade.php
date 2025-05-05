@@ -31,8 +31,8 @@
         </div>
         {{-- Desktop --}}
         <div class="d-none d-lg-flex w-25 justify-content-end align-items-center gap-2">
-            <a href="/login" class="btn btn-sm rounded-pill px-lg-3 px-2 py-1 border boder-1 border-primary d-flex align-items-center gap-2 glassmorphism-btn-info-sm">Masuk <i class="bi bi-arrow-right"></i></a>
-            <a href="/login" class="btn btn-sm rounded-pill px-lg-3 px-2 py-1 border boder-1 border-primary d-flex align-items-center gap-2 glassmorphism-btn-info-sm">Masuk <i class="bi bi-arrow-right"></i></a>
+            <a href="/login" class="btn btn-sm border-0 d-flex align-items-center gap-1">Masuk <i class="bi bi-box-arrow-in-right"></i></i></a>
+            <a href="/register" class="btn btn-sm border-1 border-primary d-flex align-items-center gap-1">Daftar</i></a>
         </div>
     </div>
 </nav>
