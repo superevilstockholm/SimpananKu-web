@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="{{ asset('static/css/global-style.css') }}">
     {{-- End Local CSS --}}
 </head>
-<body data-bs-theme="dark">
+<body data-bs-theme="dark" style="background-color: black;">
     @if ($meta['showNavbar'])
-        <header class="p-0 m-0">
+        <header class="p-0 m-0 sticky-top">
             @include('components.navbar_component')
         </header>
     @endif
@@ -36,5 +36,12 @@
     {{-- Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
     {{-- End Bootstrap --}}
+    {{-- Sweetalert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.headers.common['ngrok-skip-browser-warning'] = 'any';
+    </script>
 </body>
 </html>
