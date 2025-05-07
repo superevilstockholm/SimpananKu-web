@@ -1,3 +1,41 @@
+# SimpananKu 💰  
+| Simpananku memudahkan guru, orang tua, dan siswa dalam memonitoring dan mengelola tabungan siswa.  
+### **Cara menjalankan aplikasi 🚀**
+1. **Clone repository ini**  
+```bash
+git clone https://github.com/superevilstockholm/SimpananKu-web
+```
+2. **Masuk ke direktori SimpananKu-web**  
+```bash
+cd SimpananKu-web
+```
+3. **Salin file .env.example menjadi .env**  
+```bash
+cp .env.example .env
+```
+4. **Install semua dependecies yang dibutuhkan**  
+```bash
+composer install
+```
+5. **Buat application key**  
+```bash
+php artisan key:generate
+```
+6. **Jalankan migrasi database**  
+```bash
+php artisan migrate
+```
+7. **Jalankan seeder database**  
+```bash
+php artisan db:seed
+```
+8. **Jalankan aplikasinya**  
+```bash
+php artisan serve
+```
+
+---  
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
