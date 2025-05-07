@@ -19,6 +19,11 @@
     border-radius: 10px;
 }
 
+.btn-outline-primary:hover {
+    color: rgb(var(--bs-body-color-rgb)) !important;
+    filter: brightness(1.1);
+}
+
 @media (min-width: 768px) {
     .w-md-25 {
         width: 25% !important;
@@ -30,6 +35,9 @@
         width: 75% !important;
     }
 
+    .border-md-end {
+        border-right: solid 1px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -44,5 +52,9 @@
     }
     .w-lg-75 {
         width: 75% !important;
+    }
+
+    .border-lg-end {
+        border-right: solid 1px;
     }
 }

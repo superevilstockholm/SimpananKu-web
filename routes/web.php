@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 
+
+URL::forceScheme('https');
+
 // Views
 
 Route::get('/', function () {

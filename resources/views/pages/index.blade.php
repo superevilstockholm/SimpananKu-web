@@ -51,21 +51,21 @@
                     <h6 class="fw-medium border border-1 border-primary rounded-pill px-3 py-1 glassmorphism-btn-info-sm" style="backdrop-filter: blur(10px);">Statistik Simpanan<span class="text-primary">Ku</span></h6>
                     <h3 class="display-5 fw-semibold mb-lg-4 position-relative pengguna-kami">Statistik Pengguna</h3>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mx-auto">
+                <div class="col-12 col-md-6 col-lg-4 mx-auto border-md-end border-1 border-primary-subtle">
                     <div class="d-flex flex-column">
-                        <h5 class="p-0 m-0">Jumlah Pengguna</h5>
+                        <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Pengguna</h5>
                         <p class="text-primary fs-4">150 Pengguna</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mx-auto">
+                <div class="col-12 col-md-6 col-lg-4 mx-auto border-lg-end border-1 border-primary-subtle">
                     <div class="d-flex flex-column">
-                        <h5 class="p-0 m-0">Jumlah Guru</h5>
+                        <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Guru</h5>
                         <p class="text-primary fs-4">36 Guru</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
                     <div class="d-flex flex-column">
-                        <h5 class="p-0 m-0">Total Transaksi</h5>
+                        <h5 class="p-0 m-0" style="font-size: 1rem;">Total Transaksi</h5>
                         <p class="text-primary fs-4">100.000 Transaksi</p>
                     </div>
                 </div>
