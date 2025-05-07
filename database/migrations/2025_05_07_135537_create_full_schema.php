@@ -14,7 +14,7 @@ return new class extends Migration
         // Majors Table
         Schema::create('majors', function (Blueprint $table) {
             $table->id();
-            $table->string('major_name', 25)->unique();
+            $table->string('major_name', 128)->unique();
         });
 
         // Classes Table
