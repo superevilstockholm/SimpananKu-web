@@ -9,10 +9,13 @@ class UserModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'users';
+
     protected $fillable = [
         'nisn',
         'nik',
         'password',
+        'dob',
         'email',
         'user_type'
     ];
