@@ -51,14 +51,34 @@
                     'Content-Type': 'application/json'
                 }
             }
-        ).then((response) => {
+        ).then(async (response) => {
             if (response.status == 200) {
-                alert("Login berhasil.");
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Daftar berhasil.',
+                    text: await response.data?.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    window.location.href = '/login';
+                })
             } else {
-                alert("Login gagal. Response: " + response.data);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Daftar gagal.',
+                    text: await response.data?.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
-        }).catch((error) => {
-            alert("Login gagal. Error: " + error);
+        }).catch(async (error) => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Daftar gagal.',
+                text: await error.response?.data?.message,
+                showConfirmButton: false,
+                timer: 1500
+            })
         })
     })
 </script>
