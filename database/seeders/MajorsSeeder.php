@@ -13,10 +13,10 @@ class MajorsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('majors')->insert([
-            ['major_name' => 'Rekayasa Perangkat Lunak'],
-            ['major_name' => 'Teknik Instalasi Tenaga Listrik'],
-            ['major_name' => 'Mesin Industri']
+        DB::table('major')->insert([
+            ['name' => 'Rekayasa Perangkat Lunak'],
+            ['name' => 'Teknik Instalasi Tenaga Listrik'],
+            ['name' => 'Teknik Mesin Industri']
         ]);
     }
 }

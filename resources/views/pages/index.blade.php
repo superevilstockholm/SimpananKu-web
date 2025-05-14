@@ -19,8 +19,8 @@
                     <h1 class="fw-bold display-2">Tabungan<span class="text-primary">Ku</span></h1>
                     <p class="w-100 w-md-75 w-lg-50 fw-normal">Website TabunganKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa.</p>
                     <div class="d-flex align-items-center gap-lg-2 gap-1">
-                        <a href="/login" class="btn rounded-pill px-lg-3 px-2 py-1 border boder-1 border-info d-flex align-items-center gap-2 fs-7 fs-md-6 glassmorphism-btn-info-sm">Mulai sekarang <i class="bi bi-arrow-right"></i></a>
-                        <a href="/features" class="btn rounded-pill px-lg-3 px-2 py-1 border boder-1 border-info d-flex align-items-center gap-2 fs-7 fs-md-6 glassmorphism-btn-info-sm">Lihat fitur <i class="bi bi-book-half"></i></a>
+                        <a href="/login" class="btn rounded-pill btn-outline-light px-lg-3 px-2 py-1 d-flex align-items-center gap-2 fs-7 fs-md-6 glassmorphism-btn-info-sm">Mulai sekarang <i class="bi bi-arrow-right"></i></a>
+                        <a href="/features" class="btn rounded-pill btn-outline-light px-lg-3 px-2 py-1 d-flex align-items-center gap-2 fs-7 fs-md-6 glassmorphism-btn-info-sm">Lihat fitur <i class="bi bi-book-half"></i></a>
                     </div>
                 </div>
             </div>
@@ -52,21 +52,30 @@
                     <h3 class="display-5 fw-semibold mb-lg-4 position-relative pengguna-kami">Statistik Pengguna</h3>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mx-auto border-md-end border-1 border-primary-subtle">
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Pengguna</h5>
-                        <p class="text-primary fs-4">150 Pengguna</p>
+                        <p class="fs-4 d-flex flex-column align-items-center">
+                            <span class="fs-4 text-primary fw-semibold">150</span>
+                            <span class="fs-6">Pengguna</span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mx-auto border-lg-end border-1 border-primary-subtle">
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Guru</h5>
-                        <p class="text-primary fs-4">36 Guru</p>
+                        <p class="fs-4 d-flex flex-column align-items-center">
+                            <span class="fs-4 text-primary fw-semibold">36</span>
+                            <span class="fs-6">Guru</span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Total Transaksi</h5>
-                        <p class="text-primary fs-4">100.000 Transaksi</p>
+                        <p class="d-flex flex-column align-items-center">
+                            <span class="fs-4 text-primary fw-semibold">100.000</span>
+                            <span class="fs-6">Transaksi</span>
+                        </p>
                     </div>
                 </div>
             </div>

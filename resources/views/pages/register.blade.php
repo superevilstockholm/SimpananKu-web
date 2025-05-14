@@ -35,4 +35,31 @@
         </div>
     </div>
 </section>
+<script>
+    document.getElementById('register-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await axios.post(
+            '/api/register',
+            {
+                nisn: e.target.nisn.value,
+                password: e.target.password.value,
+                dob: e.target.dob.value,
+                email: e.target.email.value
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then((response) => {
+            if (response.status == 200) {
+                alert("Login berhasil.");
+            } else {
+                alert("Login gagal. Response: " + response.data);
+            }
+        }).catch((error) => {
+            alert("Login gagal. Error: " + error);
+        })
+    })
+</script>
 @endsection

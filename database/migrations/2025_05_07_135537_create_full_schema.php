@@ -11,105 +11,73 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Majors Table
-        Schema::create('majors', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('major_name', 128)->unique();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->timestamp('created_at');
+            $table->enum('type', ['admin', 'teacher', 'student']);
         });
 
-        // Classes Table
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('major', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name', 128)->unique();
+            $table->string('name');
         });
 
-        // Students Table
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('class', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_kelas')->unique();
+        });
+
+        Schema::create('student', function (Blueprint $table) {
             $table->string('nisn', 10)->primary();
             $table->string('fullname');
             $table->date('dob');
-            $table->unsignedBigInteger('major_id');
-            $table->unsignedBigInteger('id_kelas')->nullable();
-
-            $table->foreign('major_id')->references('id')->on('majors')->onDelete('cascade');
-            $table->foreign('id_kelas')->references('id')->on('classes')->onDelete('set null');
+            $table->foreignId('major_id')->constrained('major')->onUpdate('no action')->onDelete('no action');
+            $table->foreignId('class_id')->constrained('class')->onUpdate('no action')->onDelete('no action');
+            $table->foreignId('user_id')->unique()->nullable()->constrained('users')->onUpdate('no action')->onDelete('no action');
         });
 
-        // Teachers Table
-        Schema::create('teachers', function (Blueprint $table) {
+        Schema::create('teacher', function (Blueprint $table) {
             $table->string('nik', 16)->primary();
             $table->string('fullname');
             $table->date('dob');
-            $table->unsignedBigInteger('id_kelas')->nullable();
-
-            $table->foreign('id_kelas')->references('id')->on('classes')->onDelete('set null');
+            $table->foreignId('major_id')->constrained('major')->onUpdate('no action')->onDelete('no action');
+            $table->foreignId('class_id')->constrained('class')->onUpdate('no action')->onDelete('no action');
+            $table->foreignId('user_id')->unique()->nullable()->constrained('users')->onUpdate('no action')->onDelete('no action');
         });
 
-        // User Types Table
-        Schema::create('user_type', function (Blueprint $table) {
+        Schema::create('token', function (Blueprint $table) {
             $table->id();
-            $table->enum('name', ['Admin', 'Guru', 'Siswa']);
+            $table->foreignId('user_id')->unique()->constrained('users')->onUpdate('no action')->onDelete('no action');
+            $table->string('token')->unique();
         });
 
-        // Users Table
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('nisn', 10)->nullable()->unique();
-            $table->string('nik', 16)->nullable()->unique();
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->unsignedBigInteger('user_type')->nullable();
-            $table->timestamps();
-
-            $table->foreign('user_type')->references('id')->on('user_type')->onDelete('set null');
-        });
-
-        // Tabungan Table
         Schema::create('tabungan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->decimal('nominal_total', 10, 2);
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
-
-        // Log Transaction Table
-        Schema::create('log_transaction', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->enum('jenis_transaksi', ['setoran', 'penarikan']);
-            $table->date('tanggal');
+            $table->foreignId('user_id')->unique()->constrained('users')->onUpdate('no action')->onDelete('no action');
             $table->decimal('nominal', 10, 2);
-            $table->text('keterangan')->nullable();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
-        // Tokens Table
-        Schema::create('tokens', function (Blueprint $table) {
+        Schema::create('riwayat_transaksi', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique();
-            $table->string('token')->unique();
-            $table->timestamp('create_at')->useCurrent();
-            $table->timestamp('expires_at');
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('no action')->onDelete('no action');
+            $table->enum('type', ['penarikan', 'setoran']);
+            $table->decimal('nominal', 10, 2);
+            $table->timestamp('tanggal');
+            $table->text('keterangan')->nullable();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('tokens');
-        Schema::dropIfExists('log_transaction');
+        Schema::dropIfExists('riwayat_transaksi');
         Schema::dropIfExists('tabungan');
+        Schema::dropIfExists('token');
+        Schema::dropIfExists('teacher');
+        Schema::dropIfExists('student');
+        Schema::dropIfExists('class');
+        Schema::dropIfExists('major');
         Schema::dropIfExists('users');
-        Schema::dropIfExists('user_type');
-        Schema::dropIfExists('teachers');
-        Schema::dropIfExists('students');
-        Schema::dropIfExists('classes');
-        Schema::dropIfExists('majors');
     }
 };

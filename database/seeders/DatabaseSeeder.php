@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this -> call ([
             MajorsSeeder::class,
-            UserTypeSeeder::class,
             ClassesSeeder::class
         ]);
     }
