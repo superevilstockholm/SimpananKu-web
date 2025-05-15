@@ -16,7 +16,7 @@ Route::get('/', function () {
             "showFooter" => true
         ]
     ]);
-});
+}) -> name('home');
 
 Route::get('/features', function () {
     return view('pages.features', [
@@ -25,7 +25,7 @@ Route::get('/features', function () {
             "showFooter" => true
         ]
     ]);
-});
+}) -> name('features');
 
 Route::get('/about', function () {
     return view('pages.about', [
@@ -34,7 +34,7 @@ Route::get('/about', function () {
             "showFooter" => true
         ]
     ]);
-});
+}) -> name('about');
 
 Route::get('/login', function () {
     return view('pages.login', [
@@ -43,7 +43,7 @@ Route::get('/login', function () {
             "showFooter" => false
         ]
     ]);
-});
+}) -> name('login');
 
 Route::get('/register', function () {
     return view('pages.register', [
@@ -52,7 +52,16 @@ Route::get('/register', function () {
             "showFooter" => false
         ]
     ]);
-});
+}) -> name('register');
+
+Route::get('dashboard', function () {
+    return view('pages.dashboard', [
+        "meta" => [
+            "showNavbar" => true,
+            "showFooter" => true
+        ]
+    ]);
+}) -> name('dashboard');
 
 // Api
 
