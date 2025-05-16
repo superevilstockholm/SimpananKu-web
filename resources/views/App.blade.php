@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="SimpananKu adalah website monitoring dan manajemen tabungan siswa SMK Negeri 4 Kota Tangerang.">
     <title>@yield('title', 'SimpananKu')</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('static/img/logo.svg') }}">
     {{-- Bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">

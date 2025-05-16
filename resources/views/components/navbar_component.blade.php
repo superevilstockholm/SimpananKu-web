@@ -2,7 +2,7 @@
     <div class="container py-0 my-0">
         <div class="navbar-brand py-0 my-0 w-lg-25 d-lg-flex justify-content-start">
             <a class="navbar-brand d-flex align-items-center fw-semibold gap-1 py-0 my-0" href="/">
-                <i class="bi bi-coin text-primary"></i>
+                <img src="{{ asset('static/img/logo.svg') }}" style="height: 30px;" alt="SimpananKu logo">
                 <div class="d-flex align-items-center">
                     Simpanan<span class="text-primary">Ku</span>
                 </div>

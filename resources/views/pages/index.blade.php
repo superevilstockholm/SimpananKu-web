@@ -51,7 +51,7 @@
                     <h6 class="fw-medium border border-1 border-primary rounded-pill px-3 py-1 glassmorphism-btn-info-sm" style="backdrop-filter: blur(10px);">Statistik Simpanan<span class="text-primary">Ku</span></h6>
                     <h3 class="display-5 fw-semibold mb-lg-4 position-relative pengguna-kami">Statistik Pengguna</h3>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mx-auto border-md-end border-1 border-primary-subtle">
+                <div class="col-12 col-md-6 col-lg-4 mx-auto border-md-end border-1 border-secondary">
                     <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Pengguna</h5>
                         <p class="fs-4 d-flex flex-column align-items-center">
@@ -60,7 +60,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mx-auto border-lg-end border-1 border-primary-subtle">
+                <div class="col-12 col-md-6 col-lg-4 mx-auto border-lg-end border-1 border-secondary">
                     <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Guru</h5>
                         <p class="fs-4 d-flex flex-column align-items-center">
