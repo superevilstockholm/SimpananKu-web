@@ -22,21 +22,7 @@ class AuthController extends Controller
         return $response;
     }
 
-    private function IsLoggedIn(string $user_token) {
-        if (!$user_token) {
-            return false;
-        }
-        $token = TokenModel::where('token', $user_token)->first();
-        if (!$token) {
-            return false;
-        }
-        return true;
-    }
-
     public function Login(Request $request) {
-        if ($request->cookie('session_token') && $this->IsLoggedIn($request->cookie('session_token'))) {
-            return redirect() -> route('dashboard');
-        }
         if ($request->has('nisn')) {
             // Login siswa
             $request->validate([
@@ -57,13 +43,13 @@ class AuthController extends Controller
             if (!Hash::check($request->password, $user->password)) {
                 return $this->errorResponseWithCookie('Password salah');
             }
-            $token = Str::random(16) . now()->format('YmdHis') . Str::random(16);
-            TokenModel::create([
-                'user_id' => $user->id,
-                'token' => $token
-            ]);
+            $token = Str::random(32) . now()->format('YmdHis') . Str::random(32);
+            TokenModel::updateOrCreate(
+                ['user_id' => $user->id],
+                ['token' => $token]
+            );
             $response = response()->json(['status' => true, 'message' => 'Berhasil masuk sebagai siswa']);
-            $response->cookie('session_token', $token, 60 * 24 * 7); // 7 hari
+            $response->cookie('session_token', $token, 60 * 24 * 7, null, null, true, true); // 7 hari
             return $response;
         } else if ($request->has('nik')) {
             // Login guru
@@ -86,12 +72,12 @@ class AuthController extends Controller
                 return $this->errorResponseWithCookie('Password salah');
             }
             $token = Str::random(16) . now()->format('YmdHis') . Str::random(16);
-            TokenModel::create([
-                'user_id' => $user->id,
-                'token' => $token
-            ]);
+            TokenModel::updateOrCreate(
+                ['user_id' => $user->id],
+                ['token' => $token]
+            );
             $response = response()->json(['status' => true, 'message' => 'Berhasil masuk sebagai guru']);
-            $response->cookie('session_token', $token, 60 * 24 * 7); // 7 hari
+            $response->cookie('session_token', $token, 60 * 24 * 7, null, null, true, true); // 7 hari
             return $response;
         } else {
             return $this->errorResponseWithCookie('Kredensial yang tidak valid');
@@ -106,7 +92,7 @@ class AuthController extends Controller
             // Daftar guru
             return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai guru']);
         } else {
-            return response()->json(['status'=> false, 'message' => 'kredensial yang tidak valid'], 401);
+            return $this->errorResponseWithCookie('Kredensial yang tidak valid');
         }
     }
 }

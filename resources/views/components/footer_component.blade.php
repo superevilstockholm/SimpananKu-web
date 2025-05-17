@@ -1,6 +1,6 @@
 <div class="container">
     <div class="py-3">
-        <div class="row">
+        <div class="row gap-3 gap-lg-0">
             <div class="col-12 col-md-6 col-lg-3">
                 <h6 class="fs-5 fw-bold">Ikuti kami di</h6>
                 <ul style="list-style: none;" class="p-0 m-0 gap-1">

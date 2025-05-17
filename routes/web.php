@@ -1,11 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\AuthController;
+use App\Models\TokenModel;
 
 
 URL::forceScheme('http');
+
+function IsLoggedIn(string $user_token) {
+    if (!$user_token) {
+        return false;
+    }
+    $token = TokenModel::where('token', $user_token)->first();
+    if (!$token) {
+        return false;
+    }
+    return true;
+}
 
 // Views
 
@@ -36,7 +49,10 @@ Route::get('/about', function () {
     ]);
 }) -> name('about');
 
-Route::get('/login', function () {
+Route::get('/login', function (Request $request) {
+    if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
+        return redirect() -> route('dashboard');
+    }
     return view('pages.login', [
         "meta" => [
             "showNavbar" => false,
@@ -45,7 +61,10 @@ Route::get('/login', function () {
     ]);
 }) -> name('login');
 
-Route::get('/register', function () {
+Route::get('/register', function (Request $request) {
+    if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
+        return redirect() -> route('dashboard');
+    }
     return view('pages.register', [
         "meta" => [
             "showNavbar" => false,
