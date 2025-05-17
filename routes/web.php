@@ -83,6 +83,7 @@ Route::get('dashboard', function () {
 }) -> name('dashboard');
 
 // Api
-
-Route::post('/api/login', [AuthController::class, 'Login']) -> name('api_login');
-Route::post('/api/register', [AuthController::class, 'Register']) -> name('api_register');
+Route::middleware('throttle:5,1')->group(function () {
+    Route::post('/api/login', [AuthController::class, 'Login']) -> name('api_login');
+    Route::post('/api/register', [AuthController::class, 'Register']) -> name('api_register');
+});
