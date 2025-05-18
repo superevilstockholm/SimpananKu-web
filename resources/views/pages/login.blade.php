@@ -17,12 +17,12 @@
                     <p class="fw-normal p-0 m-0 fs-7 fs-md-6">Silahkan masuk sebagai <span id="selected-role"></span></p>
                 </div>
                 <form class="py-0 m-0" id="login-form">
-                    <div class="flex-column py-0 px-2 px-lg-5 m-0 gap-3">
+                    <div class="d-flex flex-column py-0 px-2 px-lg-5 m-0 gap-3">
                         <div class="p-0 m-0 w-100 flex-column gap-3" id="student-login-form">
                             <input type="text" autocomplete="off" name="nisn" pattern="\d{10}" class="floated-label form-control-sm rounded-0 border-0 border-bottom border-white" id="nisn" placeholder="NISN" style="background-color: transparent !important" required />
                             <input type="password" name="student_password" autocomplete="off" pattern="^[a-zA-Z0-9_]+$" class="floated-label form-control-sm rounded-0 border-0 border-bottom border-white" id="student-password" placeholder="Password" style="background-color: transparent !important" required />
                         </div>
-                        <div class="p-0 m-0 w-100 flex-column gap-3" id="teacher-login-form">
+                        <div class="p-0 m-0 w-100 flex-column gap-3" id="teacher-login-form" style="display: none;">
                             <input type="text" autocomplete="off" name="nik" pattern="\d{16}" class="floated-label form-control-sm rounded-0 border-0 border-bottom border-white" id="nik" placeholder="NIK" style="background-color: transparent !important" required />
                             <input type="password" name="teacher_password" autocomplete="off" pattern="^[a-zA-Z0-9_]+$" class="floated-label form-control-sm rounded-0 border-0 border-bottom border-white" id="teacher-password" placeholder="Password" style="background-color: transparent !important" required />
                         </div>
@@ -81,11 +81,14 @@
 
     document.addEventListener('submit', async (e) => {
         e.preventDefault();
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
         if (selected_role === 'teacher') {
             await login_as_teacher(e);
         } else {
             await login_as_student(e);
         }
+        submitBtn.disabled = false;
     })
 
     async function login_as_student(e) {

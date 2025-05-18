@@ -11,5 +11,7 @@ class TeacherModel extends Model
     protected $table = 'teacher';
     protected $primaryKey = 'nik';
     protected $keyType = 'string';
+
     public $incrementing = false;
+    public $timestamps = false;
 }

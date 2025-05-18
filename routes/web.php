@@ -73,7 +73,10 @@ Route::get('/register', function (Request $request) {
     ]);
 }) -> name('register');
 
-Route::get('dashboard', function () {
+Route::get('dashboard', function (Request $request) {
+    if (!$request->cookie('session_token') || !IsLoggedIn($request->cookie('session_token'))) {
+        return redirect() -> route('login');
+    }
     return view('pages.dashboard', [
         "meta" => [
             "showNavbar" => true,

@@ -11,5 +11,7 @@ class StudentModel extends Model
     protected $table = 'student';
     protected $primaryKey = 'nisn';
     protected $keyType = 'string';
+
     public $incrementing = false;
+    public $timestamps = false;
 }

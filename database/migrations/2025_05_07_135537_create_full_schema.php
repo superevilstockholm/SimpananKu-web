@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->useCurrent();;
             $table->enum('type', ['admin', 'teacher', 'student']);
         });
 

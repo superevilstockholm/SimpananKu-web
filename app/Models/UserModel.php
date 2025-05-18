@@ -14,4 +14,6 @@ class UserModel extends Model
         'email',
         'password'
     ];
+
+    public $timestamps = false;
 }

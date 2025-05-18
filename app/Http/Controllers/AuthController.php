@@ -84,13 +84,84 @@ class AuthController extends Controller
         }
     }
 
+    private function checkUserAlreadyExists($credentials) {
+        if (!empty($credentials['email']) && UserModel::where('email', $credentials['email'])->exists()) {
+            return true;
+        }
+        if (!empty($credentials['nisn'])) {
+            $student = StudentModel::where('nisn', $credentials['nisn'])->first();
+            if ($student && $student->user_id !== null) {
+                return true;
+            }
+        }
+        if (!empty($credentials['nik'])) {
+            $teacher = TeacherModel::where('nik', $credentials['nik'])->first();
+            if ($teacher && $teacher->user_id !== null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function registerUser($request, $role) {
+        if ($role == 'student') {
+            $request->validate([
+                'nisn' => 'required|digits:10',
+                'dob' => 'required|date',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:8|max:64'
+            ]);
+        } else if ($role == 'teacher') {
+            $request->validate([
+                'nik' => 'required|digits:16',
+                'dob' => 'required|date',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:8|max:64'
+            ]);
+        }
+
+        if ($this->checkUserAlreadyExists($request->all())) {
+            return $this->errorResponseWithCookie('User sudah terdaftar');
+        }
+
+        if ($role == 'student') {
+            if ($request->dob != StudentModel::where('nisn', $request->nisn)->first()->dob) {
+                return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
+            }
+        } else if ($role == 'teacher') {
+            if ($request->dob != TeacherModel::where('nik', $request->nik)->first()->dob) {
+                return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
+            }
+        }
+
+        if ($role == 'student') {
+            $user = UserModel::create([
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => 'student'
+            ]);
+            StudentModel::where('nisn', $request->nisn)->update([
+                'user_id' => $user->id
+            ]);
+            return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai siswa']);
+        } else if ($role == 'teacher') {
+            $user = UserModel::create([
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => 'teacher'
+            ]);
+            TeacherModel::where('nik', $request->nik)->update([
+                'user_id' => $user->id
+            ]);
+            return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai guru']);
+        }
+    }
+
     public function Register(Request $request) {
         if ($request->has('nisn')) {
-            // Daftar siswa
-            return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai siswa']);
+            return $this->registerUser($request, 'student');
         } else if ($request->has('nik')) {
-            // Daftar guru
-            return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai guru']);
+            return $this->registerUser($request, 'teacher');
         } else {
             return $this->errorResponseWithCookie('Kredensial yang tidak valid');
         }
