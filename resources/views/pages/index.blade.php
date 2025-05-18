@@ -55,7 +55,7 @@
                     <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Pengguna</h5>
                         <p class="fs-4 d-flex flex-column align-items-center">
-                            <span class="fs-4 text-primary fw-semibold">150</span>
+                            <span class="fs-4 text-primary fw-semibold" id="jumlah-pengguna">0</span>
                             <span class="fs-6">Pengguna</span>
                         </p>
                     </div>
@@ -64,7 +64,7 @@
                     <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Jumlah Guru</h5>
                         <p class="fs-4 d-flex flex-column align-items-center">
-                            <span class="fs-4 text-primary fw-semibold">36</span>
+                            <span class="fs-4 text-primary fw-semibold" id="jumlah-guru">0</span>
                             <span class="fs-6">Guru</span>
                         </p>
                     </div>
@@ -73,7 +73,7 @@
                     <div class="d-flex flex-column gap-2">
                         <h5 class="p-0 m-0" style="font-size: 1rem;">Total Transaksi</h5>
                         <p class="d-flex flex-column align-items-center">
-                            <span class="fs-4 text-primary fw-semibold">100.000</span>
+                            <span class="fs-4 text-primary fw-semibold" id="total-transaksi">0</span>
                             <span class="fs-6">Transaksi</span>
                         </p>
                     </div>
@@ -121,4 +121,29 @@
         </div>
     </div>
 </section>
+<script>
+    const statistic = {}
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            response = await axios.get('/api/counting/statistics', {headers: {'Content-Type': 'application/json'}});
+            if (response.status === 200) {
+                statistic.students = response.data?.total_user;
+                statistic.teachers = response.data?.total_guru;
+                statistic.transactions = response.data?.total_transaksi;
+            } else {
+                statistic.students = 0;
+                statistic.teachers = 0;
+                statistic.transactions = 0;
+            }
+        } catch (e) {
+            statistic.students = 0;
+            statistic.teachers = 0;
+            statistic.transactions = 0;
+        } finally {
+            document.getElementById('jumlah-pengguna').innerHTML = statistic.students;
+            document.getElementById('jumlah-guru').innerHTML = statistic.teachers;
+            document.getElementById('total-transaksi').innerHTML = statistic.transactions;
+        }
+    })
+</script>
 @endsection

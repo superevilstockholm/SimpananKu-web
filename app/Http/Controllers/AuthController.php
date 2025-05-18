@@ -124,14 +124,18 @@ class AuthController extends Controller
             return $this->errorResponseWithCookie('User sudah terdaftar');
         }
 
-        if ($role == 'student') {
-            if ($request->dob != StudentModel::where('nisn', $request->nisn)->first()->dob) {
-                return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
+        try {
+            if ($role == 'student') {
+                if ($request->dob != StudentModel::where('nisn', $request->nisn)->first()->dob) {
+                    return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
+                }
+            } else if ($role == 'teacher') {
+                if ($request->dob != TeacherModel::where('nik', $request->nik)->first()->dob) {
+                    return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
+                }
             }
-        } else if ($role == 'teacher') {
-            if ($request->dob != TeacherModel::where('nik', $request->nik)->first()->dob) {
-                return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
-            }
+        } catch (\Throwable $th) {
+            return $this->errorResponseWithCookie('User tidak ditemukan');
         }
 
         if ($role == 'student') {

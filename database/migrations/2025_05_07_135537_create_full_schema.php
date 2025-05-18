@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->timestamp('created_at')->useCurrent();;
+            $table->timestamp('created_at')->useCurrent();
             $table->enum('type', ['admin', 'teacher', 'student']);
         });
 
@@ -64,7 +64,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onUpdate('no action')->onDelete('no action');
             $table->enum('type', ['penarikan', 'setoran']);
             $table->decimal('nominal', 10, 2);
-            $table->timestamp('tanggal');
+            $table->timestamp('created_at')->useCurrent();
             $table->text('keterangan')->nullable();
         });
     }

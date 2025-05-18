@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
 use App\Models\TokenModel;
 
@@ -79,14 +80,17 @@ Route::get('dashboard', function (Request $request) {
     }
     return view('pages.dashboard', [
         "meta" => [
-            "showNavbar" => true,
-            "showFooter" => true
+            "showNavbar" => false,
+            "showFooter" => false
         ]
     ]);
 }) -> name('dashboard');
 
 // Api
 Route::middleware('throttle:5,1')->group(function () {
+    // Rate Limitter
     Route::post('/api/login', [AuthController::class, 'Login']) -> name('api_login');
     Route::post('/api/register', [AuthController::class, 'Register']) -> name('api_register');
 });
+
+Route::get('/api/counting/statistics', [MainController::class, 'StatisticCounting']) -> name('api');
