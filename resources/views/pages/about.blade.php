@@ -6,10 +6,10 @@
             <div class="bg-dark p-5 shadow rounded-4">
                 <h1 class="mb-4 text-center fw-bold text-primary">Tentang SimpananKu</h1>
                 <p class="lead">
-                    <strong>SimpananKu</strong> adalah aplikasi berbasis web yang membantu koperasi dan lembaga keuangan mikro dalam mengelola simpanan anggota secara lebih mudah, cepat, dan transparan.
+                    <strong>SimpananKu</strong> Website SimpananKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa. 
                 </p>
                 <p>
-                    Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian, pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
+                    Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian siswa SMKN4, pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
                 </p>
 
                 <h5 class="mt-4 fw-semibold">Fitur Unggulan:</h5>
