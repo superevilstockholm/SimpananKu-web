@@ -3,7 +3,7 @@
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="bg-white p-5 shadow rounded-4">
+            <div class="bg-dark p-5 shadow rounded-4">
                 <h1 class="mb-4 text-center fw-bold text-primary">Tentang SimpananKu</h1>
                 <p class="lead">
                     <strong>SimpananKu</strong> adalah aplikasi berbasis web yang membantu koperasi dan lembaga keuangan mikro dalam mengelola simpanan anggota secara lebih mudah, cepat, dan transparan.
