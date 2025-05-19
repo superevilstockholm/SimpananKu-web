@@ -12,15 +12,6 @@
                     Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian siswa SMKN4 , pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
                 </p>
 
-                <h5 class="mt-4 fw-semibold">Fitur :</h5>
-                <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item">✅ Pencatatan simpanan harian, mingguan, dan bulanan</li>
-                    <li class="list-group-item">✅ Riwayat transaksi lengkap dan transparan</li>
-                    <li class="list-group-item">✅ Dashboard laporan keuangan real-time</li>
-                    <li class="list-group-item">✅ Pengelolaan data anggota yang efisien</li>
-                    <li class="list-group-item">✅ Keamanan data dengan sistem login dan otorisasi</li>
-                </ul>
-
                 <p>
                     SimpananKu hadir untuk mendukung digitalisasi koperasi agar lebih modern dan terpercaya dalam pelayanan kepada anggotanya.
                 </p>
