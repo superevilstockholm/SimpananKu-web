@@ -12,7 +12,7 @@
                     Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian siswa SMKN4 , pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
                 </p>
 
-                <h5 class="mt-4 fw-semibold">Fitur Unggulan:</h5>
+                <h5 class="mt-4 fw-semibold">Fitur :</h5>
                 <ul class="list-group list-group-flush mb-4">
                     <li class="list-group-item">✅ Pencatatan simpanan harian, mingguan, dan bulanan</li>
                     <li class="list-group-item">✅ Riwayat transaksi lengkap dan transparan</li>
