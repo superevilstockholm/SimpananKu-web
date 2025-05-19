@@ -6,7 +6,7 @@
                 <ul style="list-style: none; font-size: 0.9rem;" class="p-0 m-0 gap-1">
                     <li class="nav-item d-flex align-items-center p-0 m-0"><a class="nav-link p-0 m-0" href="/">
                         <i class="bi bi-instagram"></i>
-                        Instagram
+                        tiktok
                     </a></li>
                     <li class="nav-item d-flex align-items-center p-0 m-0"><a class="nav-link p-0 m-0" href="/">
                         <i class="bi bi-facebook"></i>
