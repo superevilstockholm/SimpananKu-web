@@ -3,14 +3,13 @@
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="rounded-circle bg-primary w-100 w-md-75 w-lg-80 top-100 start-0" style="filter: blur(100px); transform: translate(-50%, -50%); animation: fade-in 1.3s ease;"></div>
-                <div class="rounded-circle bg-primary w-100 w-md-75 w-lg-80 top-0 start-100" style="filter: blur(100px); transform: translate(-50%, -50%); animation: fade-in 1.3s ease;"></div>
+            <div class="bg-dark p-5 shadow rounded-4">
                 <h1 class="mb-4 text-center fw-bold text-primary">Tentang SimpananKu</h1>
                 <p class="lead">
                     <strong>SimpananKu</strong> Website SimpananKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa. 
                 </p>
                 <p>
-                    Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian siswa SMKN4, pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
+                    Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian siswa SMKN4 , pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
                 </p>
 
                 <h5 class="mt-4 fw-semibold">Fitur Unggulan:</h5>
