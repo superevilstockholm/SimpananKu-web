@@ -16,7 +16,7 @@
             <div class="w-100 h-100 pt-4 pb-5 px-0 my-5 mx-0">
                 <div class="pt-2 pb-3 pb-lg-4 pt-lg-3 d-flex flex-column align-items-center justify-content-center text-center" style="animation: fade-in 1.3s ease;">
                     <h6 class="fw-medium border border-1 border-primary rounded-pill px-3 py-1 glassmorphism-btn-info-sm" style="backdrop-filter: blur(10px);">Selamat datang di website</h6>
-                    <h1 class="fw-bold display-2">Tabungan<span class="text-primary">Ku</span></h1>
+                    <h1 class="fw-bold display-2">Simpanan<span class="text-primary">Ku</span></h1>
                     <p class="w-100 w-md-75 w-lg-50 fw-normal">Website TabunganKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa.</p>
                     <div class="d-flex align-items-center gap-lg-2 gap-1">
                         <a href="/login" class="btn rounded-pill btn-outline-light px-lg-3 px-2 py-1 d-flex align-items-center gap-2 fs-7 fs-md-6 glassmorphism-btn-info-sm">Mulai sekarang <i class="bi bi-arrow-right"></i></a>
@@ -122,7 +122,12 @@
     </div>
 </section>
 <script>
-    const statistic = {}
+    const statistic = {
+        students: 0,
+        teachers: 0,
+        transactions: 0
+    }
+
     document.addEventListener('DOMContentLoaded', async () => {
         try {
             response = await axios.get('/api/counting/statistics', {headers: {'Content-Type': 'application/json'}});
@@ -140,10 +145,35 @@
             statistic.teachers = 0;
             statistic.transactions = 0;
         } finally {
-            document.getElementById('jumlah-pengguna').innerHTML = statistic.students;
-            document.getElementById('jumlah-guru').innerHTML = statistic.teachers;
-            document.getElementById('total-transaksi').innerHTML = statistic.transactions;
+            ScrollTrigger.create({
+                trigger: "#jumlah-pengguna",
+                once: true,
+                onEnter: () => {
+                    animateCounter("jumlah-pengguna", statistic.students);
+                    animateCounter("jumlah-guru", statistic.teachers);
+                    animateCounter("total-transaksi", statistic.transactions);
+                }
+            });
         }
     })
+
+    function animateCounter(id, end) {
+        let dur
+        if (end < 10) {
+            dur = 1
+        } else {
+            dur = 2
+        }
+        let obj = { val: 0 };
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(obj, {
+            val: end,
+            duration: dur,
+            ease: "power1.out",
+            onUpdate: () => {
+                document.getElementById(id).innerText = Math.floor(obj.val);
+            }
+        });
+    }
 </script>
 @endsection

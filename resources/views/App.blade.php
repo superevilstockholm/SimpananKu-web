@@ -50,6 +50,15 @@
         axios.defaults.headers.common['ngrok-skip-browser-warning'] = 'any';
     </script>
     {{-- End Axios --}}
+    {{-- ScrollTrigger --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    {{-- End ScrollTrigger --}}
+    {{-- GSAP --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    </script>
+    {{-- End GSAP --}}
     {{-- Local JS --}}
     <script src="{{ asset('static/js/global-script.js') }}"></script>
     {{-- End Local JS --}}
