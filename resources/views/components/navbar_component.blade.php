@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg my-0 py-1" style="backdrop-filter: blur(10px);">
+<nav class="navbar navbar-expand-lg my-0 py-1" style="backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.3);">
     <div class="container py-0 my-0">
         <div class="navbar-brand py-0 my-0 w-lg-25 d-lg-flex justify-content-start">
             <a class="navbar-brand d-flex align-items-center fw-semibold gap-1 py-0 my-0" href="/">

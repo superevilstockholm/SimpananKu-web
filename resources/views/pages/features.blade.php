@@ -1,10 +1,25 @@
 @extends('App')
 @section('title', 'Fitur - SimpananKu')
 @section('content')
-<div class="container py-5 my-3">
-    <h1 class="mb-5 text-center">Fitur Unggulan SimpananKu</h1>
-    <div class="row g-4 justify-content-center" id="fitur-container">
-        {{-- Card content --}}
+<div class="position-relative px-0 py-5 m-0">
+    <div class="position-absolute w-100 h-100 p-0 m-0 z-n1 d-md-block d-none">
+        <div class="container w-100 h-100 py-0 my-0">
+            <div class="w-100 h-100 p-0 m-0 ratio ratio-1x1" style="animation: fade-in 1s ease;">
+                <div class="rounded-circle bg-primary w-100 w-md-75 w-lg-80 top-100 start-0" style="filter: blur(100px); transform: translate(-50%, -50%); opacity: 0.3;"></div>
+                <div class="rounded-circle bg-primary w-100 w-md-75 w-lg-80 top-0 start-100" style="filter: blur(100px); transform: translate(-50%, -50%); opacity: 0.3;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5 my-3">
+        <h1 class="mb-5 text-center">Fitur Unggulan SimpananKu</h1>
+        <div class="row g-4 justify-content-center" id="fitur-container">
+            {{-- Card content --}}
+        </div>
+    </div>
+</div>
+<div class="position-relative py-5 px-0 m-0">
+    <div class="container">
+        <h1 class="text-center">Lorem ipsum</h1>
     </div>
 </div>
 <script>
@@ -27,7 +42,7 @@
         {
             title: "Notifikasi & Pengingat",
             description: "Dapatkan notifikasi untuk setiap transaksi dan pengingat saat saldo minim untuk mendukung kebiasaan menabung.",
-            icon: "bi-bell-fill"
+            icon: "bi-bell"
         },
         {
             title: "Export Data",
@@ -38,9 +53,9 @@
     const container = document.getElementById('fitur-container');
     content.forEach(item => {
         const col = document.createElement('div');
-        col.className = 'col-md-4';
+        col.className = 'col-lg-4 col-md-6 col-12';
         col.innerHTML = `
-            <div class="card h-100 shadow-sm border-0">
+            <div class="card h-100 shadow-sm border-0 bg-transparent" style="backdrop-filter: blur(20px);">
                 <div class="card-body d-flex flex-column gap-2">
                     <i class="bi ${item.icon} fs-5 text-primary"></i>
                     <h5 class="card-title fw-semibold p-0 m-0">${item.title}</h5>
