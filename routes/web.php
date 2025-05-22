@@ -93,4 +93,13 @@ Route::middleware('throttle:5,1')->group(function () {
     Route::post('/api/register', [AuthController::class, 'Register']) -> name('api_register');
 });
 
+Route::get('/transaksi', function () {
+    return view('pages.transaksi ', [
+        "meta" => [
+            "showNavbar" => true,
+            "showFooter" => true
+        ]
+    ]);
+});
+
 Route::get('/api/counting/statistics', [MainController::class, 'StatisticCounting']) -> name('api');
