@@ -96,7 +96,7 @@ Route::middleware('throttle:5,1')->group(function () {
 Route::get('/transaksi', function () {
     return view('pages.transaksi ', [
         "meta" => [
-            "showNavbar" => true,
+            "showNavbar" => false,
             "showFooter" => true
         ]
     ]);
