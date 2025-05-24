@@ -36,7 +36,10 @@
         <h3 class="fw-bold mb-4">Data Transaksi Tabungan</h3>
 
         {{-- Tombol aksi tambah dan pencarian --}}
-        
+        <div class="mb-3 d-flex justify-content-between">
+            <a href="/transaksi/tambah" class="btn btn-primary">
+                <i class="bi bi-plus-circle me-1"></i> Tambah Transaksi
+            </a>
 
             <form action="/transaksi/search" method="GET" class="d-flex">
                 <input type="text" name="search" class="form-control me-2" placeholder="Cari transaksi...">
