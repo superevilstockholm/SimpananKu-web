@@ -102,4 +102,13 @@ Route::get('/transaksi', function () {
     ]);
 });
 
+Route::get('/tabungan', function () {
+    return view('pages.tabungan', [
+        "meta" => [
+            "showNavbar" => false,
+            "showFooter" => true
+        ]
+    ]);
+});
+
 Route::get('/api/counting/statistics', [MainController::class, 'StatisticCounting']) -> name('api');
