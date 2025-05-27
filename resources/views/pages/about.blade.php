@@ -13,7 +13,6 @@
     <div class="container py-5 my-3">
         <h1 class="mb-5 fw-bold text-center">Tentang SimpananKu</h1>
         <div class="row g-4 justify-content-center" id="fitur-container">
-            
             <p class="lead">
                 <strong>SimpananKu</strong> Website SimpananKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa. 
             </p>
@@ -24,17 +23,11 @@
                         <p>
                             SimpananKu hadir untuk mendukung digitalisasi koperasi agar lebih modern dan terpercaya dalam pelayanan kepada anggotanya.
                         </p>
-
-</div>
-                <div class="text-center mt-4">
-                    <a href="{{ url('/') }}" class="btn btn-primary px-4">Kembali ke Beranda</a>
+                        <div class="text-center mt-4">
+                            <a href="{{ url('/') }}" class="btn btn-primary px-4">Kembali ke Beranda</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body d-flex flex-column gap-2">
-                    <i class="bi ${item.icon} fs-5 text-primary"></i>
-                    <h5 class="card-title fw-semibold p-0 m-0"></h5>
-                    <p class="card-text p-0 m-0" style="font-size: 0.9rem;"></p>
-                </div>
-            </div>
 @endsection
 
 
