@@ -29,7 +29,6 @@
                 <div class="text-center mt-4">
                     <a href="{{ url('/') }}" class="btn btn-primary px-4">Kembali ke Beranda</a>
                 </div>
-            <div class="card h-100 shadow-sm border-0 bg-transparent" style="backdrop-filter: blur(20px); background-color: rgb(255, 255, 255, 0.07) !important;">
                 <div class="card-body d-flex flex-column gap-2">
                     <i class="bi ${item.icon} fs-5 text-primary"></i>
                     <h5 class="card-title fw-semibold p-0 m-0"></h5>
