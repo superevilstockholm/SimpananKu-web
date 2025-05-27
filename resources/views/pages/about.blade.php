@@ -9,17 +9,17 @@
             </div>
         </div>
     </div>
-    
-    <div class="container py-5 my-3">
+
+    <div class="container py-5 my-5">
         <h1 class="mb-5 fw-bold text-center">Tentang SimpananKu</h1>
         <div class="row g-4 justify-content-center" id="fitur-container">
             <p class="lead">
-                <strong>SimpananKu</strong> Website SimpananKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa. 
+                <strong>SimpananKu</strong> Website SimpananKu memudahkan siswa, orang tua, dan guru dalam mengelola dan memantau tabungan siswa.
             </p>
             <p>
                             Aplikasi ini dirancang dengan antarmuka yang sederhana namun powerful untuk mendukung kebutuhan pencatatan simpanan harian siswa SMKN4 , pelaporan transaksi, serta pengelolaan data anggota secara terpusat.
                         </p>
-            
+
                         <p>
                             SimpananKu hadir untuk mendukung digitalisasi koperasi agar lebih modern dan terpercaya dalam pelayanan kepada anggotanya.
                         </p>
