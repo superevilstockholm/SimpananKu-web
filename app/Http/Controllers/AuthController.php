@@ -170,4 +170,18 @@ class AuthController extends Controller
             return $this->errorResponseWithCookie('Kredensial yang tidak valid');
         }
     }
+
+    public function Logout(Request $request) {
+        if ($request->cookie('session_token')) {
+            $deleted = TokenModel::where('token', $request->cookie('session_token'))->delete();
+            if ($deleted > 0) {
+                $response = response()->json(['status' => true, 'message' => 'Berhasil keluar']);
+                return $response->cookie('session_token', '', -1);
+            } else {
+                return response()->json(['status' => false, 'message' => 'Token tidak ditemukan atau sudah dihapus']);
+            }
+        } else {
+            return $this->errorResponseWithCookie('Kredensial yang tidak valid');
+        }
+    }
 }

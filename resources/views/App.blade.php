@@ -28,7 +28,10 @@
             @include('components.navbar_component')
         </header>
     @endif
-    <main class="{{ Route::currentRouteName() == 'features' || Route::currentRouteName() == 'about' ? 'overflow-hidden': '' }}">
+    @if ($meta['showSidebar'])
+        @include('components.sidebar_component')
+    @endif
+    <main class="{{ Route::currentRouteName() == 'features' || Route::currentRouteName() == 'about' ? 'overflow-hidden': '' }} {{ Route::currentRouteName() == 'dashboard' ? 'ms-250px': '' }}">
         {{-- Content --}}
         @yield('content')
     </main>
