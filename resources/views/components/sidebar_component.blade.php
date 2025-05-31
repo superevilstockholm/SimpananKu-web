@@ -23,7 +23,10 @@
     </div>
 </div>
 <!-- Sidebar untuk desktop -->
-<div class="d-none d-md-block vh-100 position-fixed border-end" style="width: 250px;">
+<div class="d-none d-md-block vh-100 position-fixed border-end overflow-hidden" style="width: 250px;">
+    <div class="position-absolute w-100 h-100 z-n1 d-flex align-items-end justify-content-center">
+        <div class="bg-primary rounded-circle" style="width: 200px; height: 200px; filter: blur(100px); opacity: 0.7;"></div>
+    </div>
     <div class="p-3">
         <a class="navbar-brand d-flex align-items-center fs-4 fw-semibold gap-1 py-0 mt-0 mb-4" href="/">
             <img src="{{ asset('static/img/logo.svg') }}" style="height: 30px;" alt="SimpananKu logo">
