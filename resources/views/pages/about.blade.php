@@ -19,20 +19,12 @@
                 Ketahui lebih banyak tentang tim yang memelihara SimpananKu, bagaimana dan mengapa proyek ini dimulai, dan bagaimana cara terlibat.
             </p>
         </div>
-
-        <section class="text-center mb-5">
-            <h2 class="text-2xl font-bold mb-2">Team</h2>
-            <p class="text-gray-500">
-                Simpananku dikelola oleh tim kecil pengembang di SMKN 4. Kami sedang aktif bekerja untuk mengembangkan tim ini dan akan senang melihat serta mendengar dari Anda jika Anda tertarik dalam menabung secara online, keamanan yang terjaga.
-            </p>
-        </section>
-
         <section class="text-center mb-5">
             <h2 class="text-2xl font-bold mb-2">History</h2>
             <p class="text-gray-500">
-                SimpananKu dibuat oleh seorang desainer dan pengembang dari Departemen RPL SMKN 4, SimpananKu menjadi salah satu sumber untuk menabung online yang dikembangkan oleh siswa/i XI RPL 3.
+                SimpananKu dibuat oleh seorang desainer dan pengembang dari Departemen RPL SMKN 4. SimpananKu menjadi salah satu sumber untuk menabung online yang dikembangkan oleh siswa/i XI RPL 3.
                 <br><br>
-                SnapZone was created in 2025 by @fkhri, @bjrki, @alfkhr, @nai, @dzki.
+                SimpananKu was created in 2025 by @fkhri, @bjrki, @alfkhr, @nai, @dzki.
             </p>
         </section>
 
@@ -41,32 +33,32 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center">
                 <!-- Developer Cards -->
-                <div>
+                <div class="bg-white border rounded shadow p-4">
                     <img src="{{ asset('fakhri.png') }}" class="mx-auto w-24 h-24 object-cover rounded-full" />
                     <h3 class="mt-2 font-semibold">Muhammad Fakhri</h3>
                     <p>( Leader )</p>
                     <p class="font-bold">As BackEnd</p>
                 </div>
 
-                <div>
+                <div class="bg-white border rounded shadow p-4">
                     <img src="{{ asset('suki.png') }}" class="mx-auto w-24 h-24 object-cover rounded-full" />
                     <h3 class="mt-2 font-semibold">Rizky Aditia Zaenal</h3>
                     <p class="font-bold">Fullstack</p>
                 </div>
 
-                <div>
+                <div class="bg-white border rounded shadow p-4">
                     <img src="{{ asset('nais.png') }}" class="mx-auto w-24 h-24 object-cover rounded-full" />
                     <h3 class="mt-2 font-semibold">Naisya Keyla Azahra</h3>
                     <p class="font-bold">As Designer & FrontEnd</p>
                 </div>
 
-                <div>
+                <div class="bg-white border rounded shadow p-4">
                     <img src="{{ asset('alfkhr.png') }}" class="mx-auto w-24 h-24 object-cover rounded-full" />
                     <h3 class="mt-2 font-semibold">Ahmad Al-Fakhri Maulana</h3>
                     <p class="font-bold">As FrontEnd</p>
                 </div>
 
-                <div>
+                <div class="bg-white border rounded shadow p-4">
                     <img src="{{ asset('dzki.png') }}" class="mx-auto w-24 h-24 object-cover rounded-full" />
                     <h3 class="mt-2 font-semibold">Dzaki Saputra</h3>
                     <p class="font-bold">As Designer</p>
