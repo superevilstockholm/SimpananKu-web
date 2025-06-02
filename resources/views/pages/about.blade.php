@@ -10,16 +10,14 @@
         </div>
     </div>
     <!-- teks -->
-    <div class="max-w-6xl mx-auto mt-10 px-4 ">
         <div class="container py-5 my-3">
             <section>
-        <h1 class="mb-5 fw-bold text-center">Tentang SimpananKu</h1>
-        <div class="row g-4 justify-content-center" id="about-container">
-            <p class="text-gray-500">Ketahui lebih banyak tentang tim yang memelihara SimpananKu, bagaimana dan mengapa proyek ini dimulai, dan bagaimana cara terlibat.</p>
-        </section>
-    </div>
-</div>
-</div>
+              <h1 class="mb-5 fw-bold text-center">Tentang SimpananKu</h1>
+            </section>
+            <section>
+              <h2 class="text-2xl font-bold mb-2"></h2>
+              <p class="text-gray-500">Ketahui lebih banyak tentang tim yang memelihara SimpananKu, bagaimana dan mengapa proyek ini dimulai, dan bagaimana cara terlibat.</p>
+            </section>
             <section>
               <h2 class="text-2xl font-bold mb-2">Team</h2>
               <p class="text-gray-500">
@@ -32,7 +30,7 @@
               <p class="text-gray-500">
                SimpananKu dibuat oleh seorang desainer dan pengembang dari Departemen RPL SMKN 4, SimpananKu menjadi salah satu sumber untuk menabung online yang dikembangkan oleh siswa/i XI RPL 3.
                 <br><br>
-                SimpananKu was created in 2025 by @fakhri1104, @bjorki199, @a1fkhriii_, @nskylzhra, @jeksnopcat41_ .
+                SnapZone was created in 2025 by @fkhri, @bjrki, @alfkhr, @nai, @dzki.
               </p>
             </section>
                     <div class="text-center mt-4">
@@ -42,8 +40,9 @@
                     </div>
                   </div>
                 </div>
-          </div>
-    </body>
+            </section>
+        </div>
+</body>
 </html>
 @endsection
 
