@@ -30,7 +30,7 @@
               <p class="text-gray-500">
                SimpananKu dibuat oleh seorang desainer dan pengembang dari Departemen RPL SMKN 4, SimpananKu menjadi salah satu sumber untuk menabung online yang dikembangkan oleh siswa/i XI RPL 3.
                 <br><br>
-                SnapZone was created in 2025 by @fkhri, @bjrki, @alfkhr, @nai, @dzki.
+                SimpananKu was created in 2025 by @fakhri1104, @bjorki199, @a1fkhriii_, @nskylzhra, @jeksnopcat41_.
               </p>
             </section>
                     <div class="text-center mt-4">
