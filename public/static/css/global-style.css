@@ -34,9 +34,11 @@
     .w-md-75 {
         width: 75% !important;
     }
-
     .border-md-end {
         border-right: solid 1px;
+    }
+    .ms-250px {
+        margin-left: 250px !important;
     }
 }
 

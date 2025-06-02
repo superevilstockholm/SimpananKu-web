@@ -23,12 +23,15 @@
 </head>
 <body data-bs-theme="dark" style="background-color: black;">
     @if ($meta['showNavbar'])
-        <header class="p-0 m-0 {{ Route::currentRouteName() == 'features' ? 'fixed-top' : 'sticky-top' }}">
+        <header class="p-0 m-0 {{ Route::currentRouteName() == 'features' || Route::currentRouteName() == 'about' ? 'fixed-top' : 'sticky-top' }}">
             {{-- Navbar Component --}}
             @include('components.navbar_component')
         </header>
     @endif
-    <main class="{{ Route::currentRouteName() == 'features' ? 'overflow-hidden': '' }}">
+    @if ($meta['showSidebar'])
+        @include('components.sidebar_component')
+    @endif
+    <main class="{{ Route::currentRouteName() == 'features' || Route::currentRouteName() == 'about' ? 'overflow-hidden': '' }} {{ Route::currentRouteName() == 'dashboard' ? 'ms-250px': '' }}">
         {{-- Content --}}
         @yield('content')
     </main>

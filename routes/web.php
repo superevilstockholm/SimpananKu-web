@@ -27,7 +27,8 @@ Route::get('/', function () {
     return view('pages.index', [
         "meta" => [
             "showNavbar" => true,
-            "showFooter" => true
+            "showFooter" => true,
+            "showSidebar" => false
         ]
     ]);
 }) -> name('home');
@@ -36,7 +37,8 @@ Route::get('/features', function () {
     return view('pages.features', [
         "meta" => [
             "showNavbar" => true,
-            "showFooter" => true
+            "showFooter" => true,
+            "showSidebar" => false
         ]
     ]);
 }) -> name('features');
@@ -45,7 +47,8 @@ Route::get('/about', function () {
     return view('pages.about', [
         "meta" => [
             "showNavbar" => true,
-            "showFooter" => true
+            "showFooter" => true,
+            "showSidebar" => false
         ]
     ]);
 }) -> name('about');
@@ -57,7 +60,8 @@ Route::get('/login', function (Request $request) {
     return view('pages.login', [
         "meta" => [
             "showNavbar" => false,
-            "showFooter" => false
+            "showFooter" => false,
+            "showSidebar" => false
         ]
     ]);
 }) -> name('login');
@@ -69,7 +73,8 @@ Route::get('/register', function (Request $request) {
     return view('pages.register', [
         "meta" => [
             "showNavbar" => false,
-            "showFooter" => false
+            "showFooter" => false,
+            "showSidebar" => false
         ]
     ]);
 }) -> name('register');
@@ -81,7 +86,8 @@ Route::get('dashboard', function (Request $request) {
     return view('pages.dashboard', [
         "meta" => [
             "showNavbar" => false,
-            "showFooter" => false
+            "showFooter" => false,
+            "showSidebar" => true
         ]
     ]);
 }) -> name('dashboard');
@@ -91,6 +97,7 @@ Route::middleware('throttle:5,1')->group(function () {
     // Rate Limitter
     Route::post('/api/login', [AuthController::class, 'Login']) -> name('api_login');
     Route::post('/api/register', [AuthController::class, 'Register']) -> name('api_register');
+    Route::delete('/api/logout', [AuthController::class, 'Logout']) -> name('api_logout');
 });
 
 Route::get('/transaksi', function () {
