@@ -109,7 +109,7 @@
                     showConfirmButton: false,
                     timer: 1500
                 })
-                window.location.href = '/dashboard';
+                window.location.href = '/dashboard/student';
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -147,7 +147,7 @@
                     showConfirmButton: false,
                     timer: 1500
                 })
-                window.location.href = '/dashboard';
+                window.location.href = '/dashboard/teacher';
             } else {
                 Swal.fire({
                     icon: 'error',

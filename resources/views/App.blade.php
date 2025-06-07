@@ -31,7 +31,7 @@
     @if ($meta['showSidebar'])
         @include('components.sidebar_component')
     @endif
-    <main class="{{ Route::currentRouteName() == 'features' || Route::currentRouteName() == 'about' ? 'overflow-hidden': '' }} {{ Route::currentRouteName() == 'dashboard' ? 'ms-250px': '' }}">
+    <main class="{{ Route::currentRouteName() == 'features' || Route::currentRouteName() == 'about' ? 'overflow-hidden': '' }} {{ Route::currentRouteName() == 'student_dashboard' || Route::currentRouteName() == 'teacher_dashboard' ? 'ms-250px': '' }}">
         {{-- Content --}}
         @yield('content')
     </main>

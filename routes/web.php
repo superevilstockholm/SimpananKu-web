@@ -8,20 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 
-use App\Models\TokenModel;
-
 URL::forceScheme('http');
-
-function IsLoggedIn(string $user_token) {
-    if (!$user_token) {
-        return false;
-    }
-    $token = TokenModel::where('token', $user_token)->first();
-    if (!$token) {
-        return false;
-    }
-    return true;
-}
 
 // Views
 
@@ -55,51 +42,13 @@ Route::get('/about', function () {
     ]);
 }) -> name('about');
 
-Route::get('/login', function (Request $request) {
-    if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
-        return redirect() -> route('dashboard');
-    }
-    return view('pages.login', [
-        "meta" => [
-            "showNavbar" => false,
-            "showFooter" => false,
-            "showSidebar" => false
-        ]
-    ]);
-}) -> name('login');
+Route::get('/login', [AuthController::class, 'LoginIndex']) -> name('login');
 
-Route::get('/register', function (Request $request) {
-    if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
-        return redirect() -> route('dashboard');
-    }
-    return view('pages.register', [
-        "meta" => [
-            "showNavbar" => false,
-            "showFooter" => false,
-            "showSidebar" => false
-        ]
-    ]);
-}) -> name('register');
+Route::get('/register', [AuthController::class, 'RegisterIndex']) -> name('register');
 
-Route::get('/dashboard', function (Request $request) {
-    if (!$request->cookie('session_token') || !IsLoggedIn($request->cookie('session_token'))) {
-        return redirect() -> route('login');
-    }
-    return view('pages.dashboard', [
-        "meta" => [
-            "showNavbar" => false,
-            "showFooter" => false,
-            "showSidebar" => true
-        ]
-    ]);
-}) -> name('dashboard');
+Route::get('/dashboard/student', [StudentController::class, 'index']) -> name('student_dashboard');
 
-Route::get('/dashboard/students', function (Request $request) {
-    if (!$request->cookie('session_token') || !IsLoggedIn($request->cookie('session_token'))) {
-        return redirect() -> route('login');
-    }
-
-});
+Route::get('/dashboard/teacher', [TeacherController::class, 'index']) -> name('teacher_dashboard');
 
 // Api
 Route::middleware('throttle:5,1')->group(function () {

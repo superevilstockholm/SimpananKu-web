@@ -4,11 +4,13 @@
             Dashboard
         </a>
     </li>
-    <li class="nav-item">
-        <a href="/students" class="nav-link text-white rounded-2 {{ request()->is('profile') ? 'active bg-primary' : '' }}">
-            Students
-        </a>
-    </li>
+    @if (Route::currentRouteName() == 'teacher_dashboard')
+        <li class="nav-item">
+            <a href="/students" class="nav-link text-white rounded-2 {{ request()->is('profile') ? 'active bg-primary' : '' }}">
+                Students
+            </a>
+        </li>
+    @endif
     <li class="nav-item">
         <a type="button" class="nav-link text-white rounded-2 {{ request()->is('settings') ? 'active bg-primary' : '' }}" data-bs-toggle="modal" data-bs-target="#settingsModal">
             Settings

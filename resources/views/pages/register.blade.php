@@ -35,7 +35,7 @@
                         </div>
                         <div class="d-flex flex-column text-center" style="font-size: 0.9rem;">
                             <p class="p-0 m-0">Sudah punya akun? <a href="/login" class="text-primary text-decoration-none p-0 m-0">Masuk disini</a></p>
-                            <p class="p-0 m-0">Kamu seorang <span id="role"></span>? <a class="text-primary text-decoration-none p-0 m-0" style="cursor: pointer;" onclick="changeRole()">Masuk disini</a></p>
+                            <p class="p-0 m-0">Kamu seorang <span id="role"></span>? <a class="text-primary text-decoration-none p-0 m-0" style="cursor: pointer;" onclick="changeRole()">Daftar disini</a></p>
                         </div>
                     </div>
                 </form>

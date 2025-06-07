@@ -22,6 +22,70 @@ class AuthController extends Controller
         return $response;
     }
 
+    function IsLoggedIn(string $user_token) {
+        if (!$user_token) {
+            return false;
+        }
+        $token = TokenModel::where('token', $user_token)->first();
+        if (!$token) {
+            return false;
+        }
+        return true;
+    }
+
+    function CheckUserRole(string $user_token) {
+        if (!$user_token) {
+            return false;
+        }
+        $token = TokenModel::where('token', $user_token)->first();
+        if (!$token) {
+            return false;
+        }
+        $user = UserModel::find($token->user_id);
+        if (!$user) {
+            return false;
+        }
+        return $user->type;
+    }
+
+    // View
+
+    public function LoginIndex(Request $request) {
+        if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
+            if (CheckUserRole($request->cookie('session_token')) == 'student') {
+                return redirect() -> route('student_dashboard');
+            } else if (CheckUserRole($request->cookie('session_token')) == 'teacher') {
+                return redirect() -> route('teacher_dashboard');
+            }
+        }
+        return view('pages.login', [
+            "meta" => [
+                "showNavbar" => false,
+                "showFooter" => false,
+                "showSidebar" => false
+            ]
+        ]);
+    }
+
+    public function RegisterIndex(Request $request) {
+        if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
+            if (CheckUserRole($request->cookie('session_token')) == 'student') {
+                return redirect() -> route('student_dashboard');
+            } else if (CheckUserRole($request->cookie('session_token')) == 'teacher') {
+                return redirect() -> route('teacher_dashboard');
+            }
+        }
+        return view('pages.register', [
+            "meta" => [
+                "showNavbar" => false,
+                "showFooter" => false,
+                "showSidebar" => false
+            ]
+        ]);
+    }
+
+    // API
+
     public function Login(Request $request) {
         if ($request->has('nisn')) {
             // Login siswa
