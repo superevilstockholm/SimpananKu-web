@@ -103,15 +103,15 @@ class AuthController extends Controller
         return false;
     }
 
-    private function registerUser($request, $role) {
-        if ($role == 'student') {
+    private function registerUser($request, $type) {
+        if ($type == 'student') {
             $request->validate([
                 'nisn' => 'required|digits:10',
                 'dob' => 'required|date',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:8|max:64'
             ]);
-        } else if ($role == 'teacher') {
+        } else if ($type == 'teacher') {
             $request->validate([
                 'nik' => 'required|digits:16',
                 'dob' => 'required|date',
@@ -125,11 +125,11 @@ class AuthController extends Controller
         }
 
         try {
-            if ($role == 'student') {
+            if ($type == 'student') {
                 if ($request->dob != StudentModel::where('nisn', $request->nisn)->first()->dob) {
                     return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
                 }
-            } else if ($role == 'teacher') {
+            } else if ($type == 'teacher') {
                 if ($request->dob != TeacherModel::where('nik', $request->nik)->first()->dob) {
                     return $this->errorResponseWithCookie('Tanggal lahir tidak sesuai');
                 }
@@ -138,21 +138,21 @@ class AuthController extends Controller
             return $this->errorResponseWithCookie('User tidak ditemukan');
         }
 
-        if ($role == 'student') {
+        if ($type == 'student') {
             $user = UserModel::create([
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => 'student'
+                'type' => 'student'
             ]);
             StudentModel::where('nisn', $request->nisn)->update([
                 'user_id' => $user->id
             ]);
             return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai siswa']);
-        } else if ($role == 'teacher') {
+        } else if ($type == 'teacher') {
             $user = UserModel::create([
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => 'teacher'
+                'type' => 'teacher'
             ]);
             TeacherModel::where('nik', $request->nik)->update([
                 'user_id' => $user->id

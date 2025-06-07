@@ -12,7 +12,8 @@ class UserModel extends Model
 
     protected $fillable = [
         'email',
-        'password'
+        'password',
+        'type'
     ];
 
     public $timestamps = false;

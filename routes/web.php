@@ -5,8 +5,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
-use App\Models\TokenModel;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentController;
 
+use App\Models\TokenModel;
 
 URL::forceScheme('http');
 
@@ -79,7 +81,7 @@ Route::get('/register', function (Request $request) {
     ]);
 }) -> name('register');
 
-Route::get('dashboard', function (Request $request) {
+Route::get('/dashboard', function (Request $request) {
     if (!$request->cookie('session_token') || !IsLoggedIn($request->cookie('session_token'))) {
         return redirect() -> route('login');
     }
@@ -91,6 +93,13 @@ Route::get('dashboard', function (Request $request) {
         ]
     ]);
 }) -> name('dashboard');
+
+Route::get('/dashboard/students', function (Request $request) {
+    if (!$request->cookie('session_token') || !IsLoggedIn($request->cookie('session_token'))) {
+        return redirect() -> route('login');
+    }
+
+});
 
 // Api
 Route::middleware('throttle:5,1')->group(function () {

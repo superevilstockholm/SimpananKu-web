@@ -5,12 +5,12 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="/profile" class="nav-link text-white rounded-2 {{ request()->is('profile') ? 'active bg-primary' : '' }}">
-            Profile
+        <a href="/students" class="nav-link text-white rounded-2 {{ request()->is('profile') ? 'active bg-primary' : '' }}">
+            Students
         </a>
     </li>
     <li class="nav-item">
-        <a href="/settings" class="nav-link text-white rounded-2 {{ request()->is('settings') ? 'active bg-primary' : '' }}">
+        <a type="button" class="nav-link text-white rounded-2 {{ request()->is('settings') ? 'active bg-primary' : '' }}" data-bs-toggle="modal" data-bs-target="#settingsModal">
             Settings
         </a>
     </li>
