@@ -51,10 +51,10 @@ class AuthController extends Controller
     // View
 
     public function LoginIndex(Request $request) {
-        if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
-            if (CheckUserRole($request->cookie('session_token')) == 'student') {
+        if ($request->cookie('session_token') && $this->IsLoggedIn($request->cookie('session_token'))) {
+            if ($this->CheckUserRole($request->cookie('session_token')) == 'student') {
                 return redirect() -> route('student_dashboard');
-            } else if (CheckUserRole($request->cookie('session_token')) == 'teacher') {
+            } else if ($this->CheckUserRole($request->cookie('session_token')) == 'teacher') {
                 return redirect() -> route('teacher_dashboard');
             }
         }
@@ -68,10 +68,10 @@ class AuthController extends Controller
     }
 
     public function RegisterIndex(Request $request) {
-        if ($request->cookie('session_token') && IsLoggedIn($request->cookie('session_token'))) {
-            if (CheckUserRole($request->cookie('session_token')) == 'student') {
+        if ($request->cookie('session_token') && $this->IsLoggedIn($request->cookie('session_token'))) {
+            if ($this->CheckUserRole($request->cookie('session_token')) == 'student') {
                 return redirect() -> route('student_dashboard');
-            } else if (CheckUserRole($request->cookie('session_token')) == 'teacher') {
+            } else if ($this->CheckUserRole($request->cookie('session_token')) == 'teacher') {
                 return redirect() -> route('teacher_dashboard');
             }
         }
