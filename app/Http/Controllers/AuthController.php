@@ -7,6 +7,7 @@ use App\Models\UserModel;
 use App\Models\StudentModel;
 use App\Models\TeacherModel;
 use App\Models\TokenModel;
+use App\Models\TabunganModel;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
@@ -210,6 +211,10 @@ class AuthController extends Controller
             ]);
             StudentModel::where('nisn', $request->nisn)->update([
                 'user_id' => $user->id
+            ]);
+            TabunganModel::create([
+                'user_id' => $user->id,
+                'nominal' => 0
             ]);
             return response()->json(['status' => true, 'message' => 'Berhasil mendaftar sebagai siswa']);
         } else if ($type == 'teacher') {
